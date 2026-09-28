@@ -38,8 +38,9 @@ var _ready_to_apply := false
 func _ready() -> void:
 	# Grab the xr interface
 	_xr = XRServer.find_interface("OpenXR")
-	if _xr == null: 
-		push_error("XRPassthrough|FATAL: no OpenXR interface passthrough will NOT work")
+	if _xr == null:
+		if OS.get_name() == "Android":
+			push_error("XRPassthrough|FATAL: no OpenXR interface; passthrough will not work")
 		return
 
 	# Process the applications's envornment

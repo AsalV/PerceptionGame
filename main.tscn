@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://u4v467pv0cty" path="res://scripts/xr_grab.gd" id="11_grab"]
 [ext_resource type="Script" uid="uid://cabtbicn2evsq" path="res://scripts/xr_move.gd" id="12_move"]
 [ext_resource type="Script" uid="uid://bt5krry1meoum" path="res://scripts/xr_grab_hands.gd" id="15_hgrab"]
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="16_game"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_grab"]
 radius = 0.08
@@ -566,6 +567,16 @@ directional_shadow_max_distance = 12.0
 [node name="Passthrough" type="Node" parent="." unique_id=1290157622]
 script = ExtResource("6_pass")
 world_environment = NodePath("../WorldEnvironment")
-hide_in_passthrough = Array[NodePath]([NodePath(""), NodePath(""), NodePath("")])
+hide_in_passthrough = Array[NodePath]([])
 
-[node name="LevelContainer" type="Node3D" parent="." unique_id=776137034]
+[node name="DesktopCameraRig" type="Node3D" parent="."]
+position = Vector3(0, 1.6, 4.5)
+
+[node name="DesktopCamera3D" type="Camera3D" parent="DesktopCameraRig"]
+current = true
+fov = 70.0
+near = 0.05
+
+[node name="GameWorld" type="Node3D" parent="."]
+script = ExtResource("16_game")
+desktop_camera_path = NodePath("../DesktopCameraRig/DesktopCamera3D")
