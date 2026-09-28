@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://0rvqjx0tjoee"]
+
+[ext_resource type="Shader" uid="uid://bdncegx70k5ge" path="res://assets/shaders/floor_grid.gdshader" id="1_m802k"]
+[ext_resource type="PackedScene" uid="uid://dw1tqwnwhrd35" path="res://scenes/props/dog.tscn" id="2_i2aat"]
+[ext_resource type="PackedScene" uid="uid://bau1nhvvc45xy" path="res://scenes/props/cow.tscn" id="3_uvc87"]
+[ext_resource type="PackedScene" uid="uid://dudh6ruorla1y" path="res://scenes/props/cat.tscn" id="4_qdh5e"]
+[ext_resource type="PackedScene" uid="uid://biywrx71xoiu5" path="res://scenes/props/bike.tscn" id="5_1ey3t"]
+[ext_resource type="PackedScene" uid="uid://cjgpilh1unu7n" path="res://scenes/props/car.tscn" id="6_t0hvh"]
+[ext_resource type="PackedScene" uid="uid://dwpj5enoor41w" path="res://scenes/props/train.tscn" id="7_kfebt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2aat"]
+render_priority = 0
+shader = ExtResource("1_m802k")
+shader_parameter/floor_color = Color(0.1, 0.11, 0.13, 1)
+shader_parameter/line_color = Color(0.3, 0.48, 0.68, 1)
+shader_parameter/grid_size = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2djvx"]
+size = Vector2(10.2, 10.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvc87"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="SphereMesh" id="SphereMesh_m802k"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i2aat"]
+radius = 0.05
+
+[node name="Level01" type="Node3D" unique_id=1623227063]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=478261330]
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=697444285]
+material_override = SubResource("ShaderMaterial_i2aat")
+mesh = SubResource("PlaneMesh_2djvx")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=1848940046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_uvc87")
+
+[node name="Props" type="Node3D" parent="." unique_id=173948536]
+
+[node name="Dog1" parent="Props" unique_id=175844070 instance=ExtResource("2_i2aat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048713684, 1.0418389, -0.6)
+
+[node name="Cow1" parent="Props" unique_id=151611866 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+
+[node name="cat1" parent="Props" unique_id=1354517604 instance=ExtResource("4_qdh5e")]
+
+[node name="Bike1" parent="Props" unique_id=968209917 instance=ExtResource("5_1ey3t")]
+
+[node name="Car1" parent="Props" unique_id=1244749884 instance=ExtResource("6_t0hvh")]
+
+[node name="train1" parent="Props" unique_id=1216153920 instance=ExtResource("7_kfebt")]
+
+[node name="Ball" type="RigidBody3D" parent="Props" unique_id=1132815180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Ball" unique_id=1129723319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12304139)
+mesh = SubResource("SphereMesh_m802k")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Ball" unique_id=2144728532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.121456295)
+shape = SubResource("SphereShape3D_i2aat")
+
+[node name="Boxes" type="Node3D" parent="." unique_id=2086867238]
+
+[editable path="Props/Dog1"]
+[editable path="Props/Cow1"]
+[editable path="Props/cat1"]
+[editable path="Props/Bike1"]
+[editable path="Props/Car1"]
+[editable path="Props/train1"]
