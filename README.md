@@ -1,6 +1,11 @@
-# VR/AR@MIT Godot XR Project Template
+# Perception Game - based on VR/AR@MIT Godot XR Project Template
 
 Features basic XR setup, dynamic controller/hand models for both hand and regular tracking, passthrough setup, and other basic scaffolds.
+
+
+For mesh and shape, go to scenes > levels > level tscn.
+Then, click on the props in the scene map to edit them. (Do not touch the prop tscns in the FileSystem). Please do not remove any nodes.
+
 
 ## 1 Template Capabilities
 
