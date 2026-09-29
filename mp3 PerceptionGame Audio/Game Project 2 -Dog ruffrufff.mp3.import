@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dq5tn08rv602t"
+path="res://.godot/imported/Game Project 2 -Dog ruffrufff.mp3-37f36e3610da7ef60a2c4f9979aaf8ce.mp3str"
+
+[deps]
+
+source_file="res://mp3 PerceptionGame Audio/Game Project 2 -Dog ruffrufff.mp3"
+dest_files=["res://.godot/imported/Game Project 2 -Dog ruffrufff.mp3-37f36e3610da7ef60a2c4f9979aaf8ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -569,3 +569,5 @@ world_environment = NodePath("../WorldEnvironment")
 hide_in_passthrough = Array[NodePath]([NodePath(""), NodePath(""), NodePath("")])
 
 [node name="LevelContainer" type="Node3D" parent="." unique_id=776137034]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1928994687]
