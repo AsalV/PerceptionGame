@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://biywrx71xoiu5" path="res://scenes/props/bike.tscn" id="5_1ey3t"]
 [ext_resource type="PackedScene" uid="uid://cjgpilh1unu7n" path="res://scenes/props/car.tscn" id="6_t0hvh"]
 [ext_resource type="PackedScene" uid="uid://dwpj5enoor41w" path="res://scenes/props/train.tscn" id="7_kfebt"]
+[ext_resource type="PackedScene" uid="uid://cykjx7uveeoya" path="res://assets/models/low_poly_room.glb" id="8_07lms"]
+[ext_resource type="PackedScene" uid="uid://b6hkicetd01tp" path="res://assets/models/cows/cow_silhouette.glb" id="9_gi8m4"]
+[ext_resource type="PackedScene" uid="uid://bat2o0fyjk2d6" path="res://assets/models/dogs/dog_silhouette.glb" id="10_cwffn"]
+[ext_resource type="PackedScene" uid="uid://casplcvmeh21x" path="res://assets/models/cats/cat_silhouette.glb" id="11_e6lid"]
+[ext_resource type="PackedScene" uid="uid://bhyb3ebll5g5p" path="res://assets/models/bikes/bike_silhouette.glb" id="12_3g50r"]
+[ext_resource type="PackedScene" uid="uid://bcekxduht7vsu" path="res://assets/models/trains/train_silhouette.glb" id="13_iu1m7"]
+[ext_resource type="PackedScene" uid="uid://bv0gewlcvu716" path="res://assets/models/cars/car_silhouette.glb" id="14_cywot"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2aat"]
 render_priority = 0
@@ -68,6 +75,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.121456295)
 shape = SubResource("SphereShape3D_i2aat")
 
 [node name="Boxes" type="Node3D" parent="." unique_id=2086867238]
+
+[node name="low_poly_room" parent="." unique_id=654371266 instance=ExtResource("8_07lms")]
+
+[node name="cow_silhouette" parent="." unique_id=867988785 instance=ExtResource("9_gi8m4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0216296, 0.0019999985, 0.49225605)
+
+[node name="dog_silhouette" parent="." unique_id=782724783 instance=ExtResource("10_cwffn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56380975, 0.004999999, 0.6201384)
+
+[node name="cat_silhouette" parent="." unique_id=1765738808 instance=ExtResource("11_e6lid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07923114, 0.004999999, 0.70844316)
+
+[node name="bike_silhouette" parent="." unique_id=1998720071 instance=ExtResource("12_3g50r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93702006, 0.002000004, 1.1394974)
+
+[node name="train_silhouette" parent="." unique_id=448842792 instance=ExtResource("13_iu1m7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6300703, 0, 1.2235241)
+
+[node name="car_silhouette" parent="." unique_id=524595332 instance=ExtResource("14_cywot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19940773, -5.9604645e-08, 1.1186781)
 
 [editable path="Props/Dog1"]
 [editable path="Props/Cow1"]

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://jfdo7emflrdm" path="res://scripts/B_toggle_passthrough.gd" id="3_vivmo"]
 [ext_resource type="Texture2D" uid="uid://c038dxexu2lhv" path="res://assets/models/controllers/quest_touch_plus_right_crystalControllers_right_BaseColor.png" id="4_5vw27"]
 [ext_resource type="Script" uid="uid://bkeashwobe3gi" path="res://scripts/xr_passthrough.gd" id="6_pass"]
+[ext_resource type="PackedScene" uid="uid://cykjx7uveeoya" path="res://assets/models/low_poly_room.glb" id="11_efxa6"]
 [ext_resource type="Script" uid="uid://u4v467pv0cty" path="res://scripts/xr_grab.gd" id="11_grab"]
 [ext_resource type="Script" uid="uid://cabtbicn2evsq" path="res://scripts/xr_move.gd" id="12_move"]
 [ext_resource type="Script" uid="uid://bt5krry1meoum" path="res://scripts/xr_grab_hands.gd" id="15_hgrab"]
@@ -569,3 +570,5 @@ world_environment = NodePath("../WorldEnvironment")
 hide_in_passthrough = Array[NodePath]([NodePath(""), NodePath(""), NodePath("")])
 
 [node name="LevelContainer" type="Node3D" parent="." unique_id=776137034]
+
+[node name="low_poly_room" parent="." unique_id=654371266 instance=ExtResource("11_efxa6")]
