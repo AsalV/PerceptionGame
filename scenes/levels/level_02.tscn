@@ -3,10 +3,16 @@
 [ext_resource type="Shader" uid="uid://bdncegx70k5ge" path="res://assets/shaders/floor_grid.gdshader" id="1_keemd"]
 [ext_resource type="PackedScene" uid="uid://dw1tqwnwhrd35" path="res://scenes/props/dog.tscn" id="2_ppbiy"]
 [ext_resource type="PackedScene" uid="uid://bau1nhvvc45xy" path="res://scenes/props/cow.tscn" id="3_c6rld"]
+[ext_resource type="AudioStream" uid="uid://c0eutu0s3lxr1" path="res://scenes/mp3 PerceptionGame Audio/Game Project 2 -Dog ruffrufff.mp3" id="3_km0xc"]
 [ext_resource type="PackedScene" uid="uid://dudh6ruorla1y" path="res://scenes/props/cat.tscn" id="4_yklhy"]
+[ext_resource type="AudioStream" uid="uid://dsy5ik8cy31s0" path="res://mp3 PerceptionGame Audio/Game Project 2- Cow moo.mp3" id="5_n536o"]
 [ext_resource type="PackedScene" uid="uid://biywrx71xoiu5" path="res://scenes/props/bike.tscn" id="5_o4ql5"]
 [ext_resource type="PackedScene" uid="uid://cjgpilh1unu7n" path="res://scenes/props/car.tscn" id="6_4hx2o"]
 [ext_resource type="PackedScene" uid="uid://dwpj5enoor41w" path="res://scenes/props/train.tscn" id="7_km0xc"]
+[ext_resource type="AudioStream" uid="uid://b8yh6y8e2el1o" path="res://mp3 PerceptionGame Audio/Game Project 2- Cat meow.mp3" id="7_m2jhg"]
+[ext_resource type="AudioStream" uid="uid://cd47mkgox6vfd" path="res://scenes/mp3 PerceptionGame Audio/Game Project 2-Bike Bell.mp3" id="9_q6ljp"]
+[ext_resource type="AudioStream" uid="uid://c7ts77hhdbnxo" path="res://scenes/mp3 PerceptionGame Audio/Game Project 2- Car horn.mp3" id="11_4dr30"]
+[ext_resource type="AudioStream" uid="uid://denrv5ati8i72" path="res://mp3 PerceptionGame Audio/Game Project 2-Train whistle.mp3" id="13_dscar"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2aat"]
 render_priority = 0
@@ -48,16 +54,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
 [node name="MeshInstance3D" parent="Props/Dog2" index="1" unique_id=1172310068]
 transform = Transform3D(0.99987304, 0.013558078, -0.008370664, -0.013495847, 0.9998812, 0.0074467696, 0.008470632, -0.0073328568, 0.99993724, -0.35529435, 0.37444824, 0.3478138)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Props/Dog2" unique_id=208263709]
+stream = ExtResource("3_km0xc")
+
 [node name="Cow2" parent="Props" unique_id=151611866 instance=ExtResource("3_c6rld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Props/Cow2" unique_id=1014968413]
+stream = ExtResource("5_n536o")
+
 [node name="Cat2" parent="Props" unique_id=1354517604 instance=ExtResource("4_yklhy")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Props/Cat2" unique_id=313332499]
+stream = ExtResource("7_m2jhg")
 
 [node name="Bike2" parent="Props" unique_id=968209917 instance=ExtResource("5_o4ql5")]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Props/Bike2" unique_id=141555913]
+stream = ExtResource("9_q6ljp")
+
 [node name="Car2" parent="Props" unique_id=1244749884 instance=ExtResource("6_4hx2o")]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Props/Car2" unique_id=565916236]
+stream = ExtResource("11_4dr30")
+
 [node name="train2" parent="Props" unique_id=1216153920 instance=ExtResource("7_km0xc")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Props/train2" unique_id=1348247030]
+stream = ExtResource("13_dscar")
 
 [node name="Ball" type="RigidBody3D" parent="Props" unique_id=1132815180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
