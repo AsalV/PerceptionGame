@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://esl817x1u6hk"
+path="res://.godot/imported/Dropping to the box sound effect.mp3-bec703021d79aff69c49079d069b129d.mp3str"
+
+[deps]
+
+source_file="res://mp3 PerceptionGame Audio/Dropping to the box sound effect.mp3"
+dest_files=["res://.godot/imported/Dropping to the box sound effect.mp3-bec703021d79aff69c49079d069b129d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
