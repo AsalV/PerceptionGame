@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dudh6ruorla1y"]
 
 [ext_resource type="PackedScene" uid="uid://cctrl2nstm42m" path="res://scenes/props/prop_base.tscn" id="1_qnke5"]
+[ext_resource type="PackedScene" uid="uid://casplcvmeh21x" path="res://assets/models/cats/cat_silhouette.glb" id="2_7og2i"]
 
-[node name="cat1" unique_id=175844070 instance=ExtResource("1_qnke5")]
+[node name="cat2" unique_id=175844070 instance=ExtResource("1_qnke5")]
+
+[node name="cat_silhouette" parent="." index="1" unique_id=2083674268 instance=ExtResource("2_7og2i")]

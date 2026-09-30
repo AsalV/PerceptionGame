@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bau1nhvvc45xy"]
 
 [ext_resource type="PackedScene" uid="uid://cctrl2nstm42m" path="res://scenes/props/prop_base.tscn" id="1_4d1x3"]
+[ext_resource type="PackedScene" uid="uid://b6hkicetd01tp" path="res://assets/models/cows/cow_silhouette.glb" id="2_ueobg"]
 
 [node name="Cow1" unique_id=175844070 instance=ExtResource("1_4d1x3")]
+
+[node name="cow_silhouette" parent="." index="1" unique_id=1308699153 instance=ExtResource("2_ueobg")]

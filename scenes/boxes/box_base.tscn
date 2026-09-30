@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://bd6n3ikj1subu"]
 
-[ext_resource type="Script" uid="uid://b66kcftw1oxpj" path="res://scripts/sorting_bpx.gd" id="1_vr2ii"]
+[ext_resource type="Script" uid="uid://b66kcftw1oxpj" path="res://scripts/sorting_box.gd" id="1_vr2ii"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xp47u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6ljp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2blar"]
 
-[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_pwej6"]
+[sub_resource type="BoxMesh" id="BoxMesh_4dr30"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b1s13"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr2ii"]
 
 [node name="BoxBase" type="Area3D" unique_id=212470345]
 script = ExtResource("1_vr2ii")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1833391862]
-shape = SubResource("ConcavePolygonShape3D_xp47u")
+shape = SubResource("BoxShape3D_q6ljp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=23244198]
 physics_material_override = SubResource("PhysicsMaterial_2blar")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2007910247]
-mesh = SubResource("PlaceholderMesh_pwej6")
+mesh = SubResource("BoxMesh_4dr30")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2125277821]
-shape = SubResource("ConcavePolygonShape3D_b1s13")
+shape = SubResource("BoxShape3D_vr2ii")

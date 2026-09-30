@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c6snxhek1fbe5"]
+
+[ext_resource type="PackedScene" uid="uid://cykjx7uveeoya" path="res://assets/models/low_poly_room.glb" id="1_36trf"]
+
+[node name="Room" type="Node3D" unique_id=1701270660]
+
+[node name="low_poly_room" parent="." unique_id=1703621876 instance=ExtResource("1_36trf")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

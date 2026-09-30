@@ -4,13 +4,8 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_b1s13"]
 
-[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_b1s13"]
-
 [node name="PropBase" type="RigidBody3D" unique_id=175844070]
 script = ExtResource("1_k36ob")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1065910707]
 shape = SubResource("SphereShape3D_b1s13")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1172310068]
-mesh = SubResource("PlaceholderMesh_b1s13")

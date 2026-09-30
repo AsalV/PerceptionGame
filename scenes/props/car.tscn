@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cjgpilh1unu7n"]
 
 [ext_resource type="PackedScene" uid="uid://cctrl2nstm42m" path="res://scenes/props/prop_base.tscn" id="1_h23b7"]
+[ext_resource type="PackedScene" uid="uid://bv0gewlcvu716" path="res://assets/models/cars/car_silhouette.glb" id="2_8e4kj"]
 
-[node name="Car1" unique_id=175844070 instance=ExtResource("1_h23b7")]
+[node name="Car2" unique_id=175844070 instance=ExtResource("1_h23b7")]
+
+[node name="car_silhouette" parent="." index="1" unique_id=1602164738 instance=ExtResource("2_8e4kj")]

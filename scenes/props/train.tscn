@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dwpj5enoor41w"]
 
 [ext_resource type="PackedScene" uid="uid://cctrl2nstm42m" path="res://scenes/props/prop_base.tscn" id="1_h5mrf"]
+[ext_resource type="PackedScene" uid="uid://bcekxduht7vsu" path="res://assets/models/trains/train_silhouette.glb" id="2_h50si"]
 
 [node name="train1" unique_id=175844070 instance=ExtResource("1_h5mrf")]
+
+[node name="train_silhouette" parent="." index="1" unique_id=1039606987 instance=ExtResource("2_h50si")]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmuwam3vwub4k"
+path="res://.godot/imported/Game Project 2-Bike Bell.mp3-1dcf8edd1c2e47415335f5d1bca631f6.mp3str"
+
+[deps]
+
+source_file="res://mp3 PerceptionGame Audio/Game Project 2-Bike Bell.mp3"
+dest_files=["res://.godot/imported/Game Project 2-Bike Bell.mp3-1dcf8edd1c2e47415335f5d1bca631f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

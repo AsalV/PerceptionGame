@@ -1,11 +1,36 @@
-extends Node
+class_name Prop
+extends RigidBody3D
 
+enum Category { VEHICLE,  ANIMAL }
 
-# Called when the node enters the scene tree for the first time.
+@export var category: Category
+
+@onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
+var _was_frozen := false
+
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("grabbable")
+	add_to_group("props")
+	
+	gravity_scale = 1.0
+	freeze = false
+	_was_frozen = freeze
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if freeze != _was_frozen:
+		_was_frozen = freeze
+		if freeze:
+			_on_grabbed()
+		else:
+			_on_released()
+
+
+func _on_grabbed() -> void:
+	if audio_player:
+		audio_player.play()
+
+
+func _on_released() -> void:
 	pass

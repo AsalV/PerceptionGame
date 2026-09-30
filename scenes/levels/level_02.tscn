@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://ba3i7b22odtg5"]
 
 [ext_resource type="Shader" uid="uid://bdncegx70k5ge" path="res://assets/shaders/floor_grid.gdshader" id="1_keemd"]
-[ext_resource type="PackedScene" uid="uid://dw1tqwnwhrd35" path="res://scenes/props/dog.tscn" id="2_ppbiy"]
-[ext_resource type="PackedScene" uid="uid://bau1nhvvc45xy" path="res://scenes/props/cow.tscn" id="3_c6rld"]
-[ext_resource type="PackedScene" uid="uid://dudh6ruorla1y" path="res://scenes/props/cat.tscn" id="4_yklhy"]
-[ext_resource type="PackedScene" uid="uid://biywrx71xoiu5" path="res://scenes/props/bike.tscn" id="5_o4ql5"]
-[ext_resource type="PackedScene" uid="uid://cjgpilh1unu7n" path="res://scenes/props/car.tscn" id="6_4hx2o"]
-[ext_resource type="PackedScene" uid="uid://dwpj5enoor41w" path="res://scenes/props/train.tscn" id="7_km0xc"]
-[ext_resource type="PackedScene" uid="uid://cykjx7uveeoya" path="res://assets/models/low_poly_room.glb" id="8_n536o"]
+[ext_resource type="Script" uid="uid://bspma447q3td1" path="res://scripts/level.gd" id="1_q6ljp"]
+[ext_resource type="Script" uid="uid://jinms6n5vk6b" path="res://scripts/prop.gd" id="2_c6rld"]
+[ext_resource type="AudioStream" uid="uid://dq5tn08rv602t" path="res://mp3 PerceptionGame Audio/Game Project 2 -Dog ruffrufff.mp3" id="4_m2jhg"]
+[ext_resource type="AudioStream" uid="uid://dsy5ik8cy31s0" path="res://mp3 PerceptionGame Audio/Game Project 2- Cow moo.mp3" id="6_q6ljp"]
+[ext_resource type="AudioStream" uid="uid://b8yh6y8e2el1o" path="res://mp3 PerceptionGame Audio/Game Project 2- Cat meow.mp3" id="8_4dr30"]
 [ext_resource type="PackedScene" uid="uid://bs4btbui64ooh" path="res://assets/models/cows/cow_no_face.glb" id="9_m2jhg"]
+[ext_resource type="AudioStream" uid="uid://bmuwam3vwub4k" path="res://mp3 PerceptionGame Audio/Game Project 2-Bike Bell.mp3" id="10_dscar"]
 [ext_resource type="PackedScene" uid="uid://cvyncfhyks046" path="res://assets/models/cats/cat_no_face.glb" id="10_q6ljp"]
 [ext_resource type="PackedScene" uid="uid://nd24j4gwhw3l" path="res://assets/models/dogs/dog_no_face.glb" id="11_4dr30"]
+[ext_resource type="AudioStream" uid="uid://dlfqi7win7axa" path="res://mp3 PerceptionGame Audio/Game Project 2- Car horn.mp3" id="12_01hg1"]
 [ext_resource type="PackedScene" uid="uid://euan557na24i" path="res://assets/models/trains/train_no_face.glb" id="12_dscar"]
 [ext_resource type="PackedScene" uid="uid://bobadilwu5td4" path="res://assets/models/cars/car_no_face.glb" id="13_01hg1"]
+[ext_resource type="AudioStream" uid="uid://denrv5ati8i72" path="res://mp3 PerceptionGame Audio/Game Project 2-Train whistle.mp3" id="14_m2te4"]
 [ext_resource type="PackedScene" uid="uid://d0kkyw3xaaqou" path="res://assets/models/bikes/bike_no_face.glb" id="14_v5pqk"]
+[ext_resource type="PackedScene" uid="uid://c6snxhek1fbe5" path="res://scenes/room.tscn" id="16_q6ljp"]
+[ext_resource type="PackedScene" uid="uid://bd6n3ikj1subu" path="res://scenes/boxes/box_base.tscn" id="17_4dr30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2aat"]
 render_priority = 0
@@ -28,18 +31,32 @@ size = Vector2(10.2, 10.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvc87"]
 size = Vector3(10, 0.2, 10)
 
-[sub_resource type="SphereMesh" id="SphereMesh_m802k"]
-radius = 0.05
-height = 0.1
+[sub_resource type="BoxShape3D" id="BoxShape3D_qstn0"]
+size = Vector3(0.24902344, 0.37442017, 0.26379395)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_i2aat"]
-radius = 0.05
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6ljp"]
+size = Vector3(0.17718506, 0.30187988, 0.35131836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dr30"]
+size = Vector3(0.35546875, 0.3687744, 0.25061035)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dscar"]
+size = Vector3(0.07836914, 0.22125244, 0.52770996)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01hg1"]
+size = Vector3(0.25250244, 0.19042969, 0.36401367)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5pqk"]
+size = Vector3(0.26538086, 0.3227539, 0.37145996)
 
 [node name="Level02" type="Node3D" unique_id=1623227063]
+script = ExtResource("1_q6ljp")
+next_level_scene = "uid://prehqtx3jllh"
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=478261330]
 
 [node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=697444285]
+visible = false
 material_override = SubResource("ShaderMaterial_i2aat")
 mesh = SubResource("PlaneMesh_2djvx")
 
@@ -49,59 +66,99 @@ shape = SubResource("BoxShape3D_uvc87")
 
 [node name="Props" type="Node3D" parent="." unique_id=173948536]
 
-[node name="Dog2" parent="Props" unique_id=175844070 instance=ExtResource("2_ppbiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+[node name="Dog2" type="RigidBody3D" parent="Props" unique_id=175844070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050097853, 0.9049115)
+script = ExtResource("2_c6rld")
+category = 1
 
-[node name="MeshInstance3D" parent="Props/Dog2" index="1" unique_id=1172310068]
-transform = Transform3D(0.99987304, 0.013558078, -0.008370664, -0.013495847, 0.9998812, 0.0074467696, 0.008470632, -0.0073328568, 0.99993724, -0.35529435, 0.37444824, 0.3478138)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Dog2" unique_id=1065910707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17812955, 0)
+shape = SubResource("BoxShape3D_qstn0")
 
-[node name="Cow2" parent="Props" unique_id=151611866 instance=ExtResource("3_c6rld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+[node name="dog_no_face" parent="Props/Dog2" unique_id=1632254477 instance=ExtResource("11_4dr30")]
 
-[node name="Cat2" parent="Props" unique_id=1354517604 instance=ExtResource("4_yklhy")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Dog2" unique_id=1299940336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14956433, 0)
+stream = ExtResource("4_m2jhg")
 
-[node name="Bike2" parent="Props" unique_id=968209917 instance=ExtResource("5_o4ql5")]
+[node name="Cow2" type="RigidBody3D" parent="Props" unique_id=151611866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6983118, 0.06657854, 0.9096817)
+script = ExtResource("2_c6rld")
+category = 1
 
-[node name="Car2" parent="Props" unique_id=1244749884 instance=ExtResource("6_4hx2o")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Cow2" unique_id=675479354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03567505, 0.22654003, 0.042739987)
+shape = SubResource("BoxShape3D_q6ljp")
 
-[node name="train2" parent="Props" unique_id=1216153920 instance=ExtResource("7_km0xc")]
+[node name="cow_no_face" parent="Props/Cow2" unique_id=2105533597 instance=ExtResource("9_m2jhg")]
 
-[node name="Ball" type="RigidBody3D" parent="Props" unique_id=1132815180]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Cow2" unique_id=1693201426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17667767, 0)
+stream = ExtResource("6_q6ljp")
 
-[node name="Mesh" type="MeshInstance3D" parent="Props/Ball" unique_id=1129723319]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12304139)
-mesh = SubResource("SphereMesh_m802k")
+[node name="Cat2" type="RigidBody3D" parent="Props" unique_id=1354517604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59124637, 0.0428212, 0.9426329)
+script = ExtResource("2_c6rld")
+category = 1
 
-[node name="Collision" type="CollisionShape3D" parent="Props/Ball" unique_id=2144728532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.121456295)
-shape = SubResource("SphereShape3D_i2aat")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Cat2" unique_id=1700869656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012478113, 0.25933838, 0.010170341)
+shape = SubResource("BoxShape3D_4dr30")
 
-[node name="Boxes" type="Node3D" parent="." unique_id=2086867238]
+[node name="cat_no_face" parent="Props/Cat2" unique_id=2137763474 instance=ExtResource("10_q6ljp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027387679, 0)
 
-[node name="low_poly_room" parent="." unique_id=654371266 instance=ExtResource("8_n536o")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Cat2" unique_id=1649702225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19001928, 0)
+stream = ExtResource("8_4dr30")
 
-[node name="cow_no_face" parent="." unique_id=1606601799 instance=ExtResource("9_m2jhg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5088675, 0.0019999985, 0.76502174)
+[node name="Bike2" type="RigidBody3D" parent="Props" unique_id=968209917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.034948766, 1.4758905)
+script = ExtResource("2_c6rld")
 
-[node name="cat_no_face" parent="." unique_id=994852954 instance=ExtResource("10_q6ljp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025126725, 0.004999999, 0.79501265)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Bike2" unique_id=1060608570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017944336, 0.17422485, 0.0289917)
+shape = SubResource("BoxShape3D_dscar")
 
-[node name="dog_no_face" parent="." unique_id=63495139 instance=ExtResource("11_4dr30")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4879527, 0.004999999, 0.73489153)
+[node name="bike_no_face" parent="Props/Bike2" unique_id=1539585099 instance=ExtResource("14_v5pqk")]
 
-[node name="train_no_face" parent="." unique_id=1236394183 instance=ExtResource("12_dscar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5343333, 1.1920929e-07, 1.2905586)
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Bike2" unique_id=1181757112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11308986, 0)
+stream = ExtResource("10_dscar")
 
-[node name="car_no_face" parent="." unique_id=2034900016 instance=ExtResource("13_01hg1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1323911, 1.1920929e-07, 1.2214142)
+[node name="Car2" type="RigidBody3D" parent="Props" unique_id=1244749884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9154184, 0, 1.5149337)
+script = ExtResource("2_c6rld")
 
-[node name="bike_no_face" parent="." unique_id=340096727 instance=ExtResource("14_v5pqk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31635848, 0.0020000637, 1.0718875)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Car2" unique_id=77857766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027264237, 0.2133789, 0.06815553)
+shape = SubResource("BoxShape3D_01hg1")
 
-[editable path="Props/Dog2"]
-[editable path="Props/Cow2"]
-[editable path="Props/Cat2"]
-[editable path="Props/Bike2"]
-[editable path="Props/Car2"]
-[editable path="Props/train2"]
+[node name="car_no_face" parent="Props/Car2" unique_id=1756117981 instance=ExtResource("13_01hg1")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Car2" unique_id=510685406]
+stream = ExtResource("12_01hg1")
+
+[node name="train2" type="RigidBody3D" parent="Props" unique_id=1216153920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5845805, 0.023000479, 1.5118468)
+script = ExtResource("2_c6rld")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/train2" unique_id=634873518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028076172, 0.18480074, -0.037902832)
+shape = SubResource("BoxShape3D_v5pqk")
+
+[node name="train_no_face" parent="Props/train2" unique_id=349759783 instance=ExtResource("12_dscar")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/train2" unique_id=1033114948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16460079, 0)
+stream = ExtResource("14_m2te4")
+
+[node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_q6ljp")]
+
+[node name="Boxes" type="Node3D" parent="." unique_id=833304978]
+
+[node name="BoxBase1" parent="Boxes" unique_id=212470345 instance=ExtResource("17_4dr30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6477212, 1.0522192, -0.7297162)
+
+[node name="BoxBase2" parent="Boxes" unique_id=1940852346 instance=ExtResource("17_4dr30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77007914, 0.96119857, -0.81294787)

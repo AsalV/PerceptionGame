@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://0rvqjx0tjoee"]
 
+[ext_resource type="Script" uid="uid://bspma447q3td1" path="res://scripts/level.gd" id="1_cwffn"]
 [ext_resource type="Shader" uid="uid://bdncegx70k5ge" path="res://assets/shaders/floor_grid.gdshader" id="1_m802k"]
-[ext_resource type="PackedScene" uid="uid://dw1tqwnwhrd35" path="res://scenes/props/dog.tscn" id="2_i2aat"]
-[ext_resource type="PackedScene" uid="uid://bau1nhvvc45xy" path="res://scenes/props/cow.tscn" id="3_uvc87"]
-[ext_resource type="PackedScene" uid="uid://dudh6ruorla1y" path="res://scenes/props/cat.tscn" id="4_qdh5e"]
-[ext_resource type="PackedScene" uid="uid://biywrx71xoiu5" path="res://scenes/props/bike.tscn" id="5_1ey3t"]
-[ext_resource type="PackedScene" uid="uid://cjgpilh1unu7n" path="res://scenes/props/car.tscn" id="6_t0hvh"]
-[ext_resource type="PackedScene" uid="uid://dwpj5enoor41w" path="res://scenes/props/train.tscn" id="7_kfebt"]
-[ext_resource type="PackedScene" uid="uid://cykjx7uveeoya" path="res://assets/models/low_poly_room.glb" id="8_07lms"]
-[ext_resource type="PackedScene" uid="uid://b6hkicetd01tp" path="res://assets/models/cows/cow_silhouette.glb" id="9_gi8m4"]
-[ext_resource type="PackedScene" uid="uid://bat2o0fyjk2d6" path="res://assets/models/dogs/dog_silhouette.glb" id="10_cwffn"]
-[ext_resource type="PackedScene" uid="uid://casplcvmeh21x" path="res://assets/models/cats/cat_silhouette.glb" id="11_e6lid"]
-[ext_resource type="PackedScene" uid="uid://bhyb3ebll5g5p" path="res://assets/models/bikes/bike_silhouette.glb" id="12_3g50r"]
-[ext_resource type="PackedScene" uid="uid://bcekxduht7vsu" path="res://assets/models/trains/train_silhouette.glb" id="13_iu1m7"]
-[ext_resource type="PackedScene" uid="uid://bv0gewlcvu716" path="res://assets/models/cars/car_silhouette.glb" id="14_cywot"]
+[ext_resource type="Script" uid="uid://jinms6n5vk6b" path="res://scripts/prop.gd" id="2_kfebt"]
+[ext_resource type="PackedScene" uid="uid://bat2o0fyjk2d6" path="res://assets/models/dogs/dog_silhouette.glb" id="3_r72dd"]
+[ext_resource type="PackedScene" uid="uid://b6hkicetd01tp" path="res://assets/models/cows/cow_silhouette.glb" id="4_ijn0p"]
+[ext_resource type="AudioStream" uid="uid://dq5tn08rv602t" path="res://mp3 PerceptionGame Audio/Game Project 2 -Dog ruffrufff.mp3" id="4_r72dd"]
+[ext_resource type="PackedScene" uid="uid://casplcvmeh21x" path="res://assets/models/cats/cat_silhouette.glb" id="5_jmes4"]
+[ext_resource type="AudioStream" uid="uid://dsy5ik8cy31s0" path="res://mp3 PerceptionGame Audio/Game Project 2- Cow moo.mp3" id="6_gi8m4"]
+[ext_resource type="PackedScene" uid="uid://bhyb3ebll5g5p" path="res://assets/models/bikes/bike_silhouette.glb" id="6_tyxjt"]
+[ext_resource type="PackedScene" uid="uid://bv0gewlcvu716" path="res://assets/models/cars/car_silhouette.glb" id="7_07lms"]
+[ext_resource type="AudioStream" uid="uid://b8yh6y8e2el1o" path="res://mp3 PerceptionGame Audio/Game Project 2- Cat meow.mp3" id="8_cwffn"]
+[ext_resource type="PackedScene" uid="uid://bcekxduht7vsu" path="res://assets/models/trains/train_silhouette.glb" id="8_gi8m4"]
+[ext_resource type="AudioStream" uid="uid://bmuwam3vwub4k" path="res://mp3 PerceptionGame Audio/Game Project 2-Bike Bell.mp3" id="10_e6lid"]
+[ext_resource type="AudioStream" uid="uid://dlfqi7win7axa" path="res://mp3 PerceptionGame Audio/Game Project 2- Car horn.mp3" id="12_3g50r"]
+[ext_resource type="AudioStream" uid="uid://denrv5ati8i72" path="res://mp3 PerceptionGame Audio/Game Project 2-Train whistle.mp3" id="14_iu1m7"]
+[ext_resource type="PackedScene" uid="uid://c6snxhek1fbe5" path="res://scenes/room.tscn" id="16_cwffn"]
+[ext_resource type="PackedScene" uid="uid://bd6n3ikj1subu" path="res://scenes/boxes/box_base.tscn" id="16_e6lid"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2aat"]
 render_priority = 0
@@ -28,18 +31,32 @@ size = Vector2(10.2, 10.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvc87"]
 size = Vector3(10, 0.2, 10)
 
-[sub_resource type="SphereMesh" id="SphereMesh_m802k"]
-radius = 0.05
-height = 0.1
+[sub_resource type="BoxShape3D" id="BoxShape3D_qstn0"]
+size = Vector3(0.24902344, 0.34979248, 0.37991333)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_i2aat"]
-radius = 0.05
+[sub_resource type="BoxShape3D" id="BoxShape3D_iu1m7"]
+size = Vector3(0.29589844, 0.33166504, 0.4975891)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jix2m"]
+size = Vector3(0.35327148, 0.41784668, 0.3005371)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3g50r"]
+size = Vector3(0.13745117, 0.3155365, 0.42669678)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwffn"]
+size = Vector3(0.2062378, 0.2763977, 0.46606445)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6lid"]
+size = Vector3(0.14074707, 0.3388672, 0.5617676)
 
 [node name="Level01" type="Node3D" unique_id=1623227063]
+script = ExtResource("1_cwffn")
+next_level_scene = "uid://ba3i7b22odtg5"
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=478261330]
 
 [node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=697444285]
+visible = false
 material_override = SubResource("ShaderMaterial_i2aat")
 mesh = SubResource("PlaneMesh_2djvx")
 
@@ -49,56 +66,111 @@ shape = SubResource("BoxShape3D_uvc87")
 
 [node name="Props" type="Node3D" parent="." unique_id=173948536]
 
-[node name="Dog1" parent="Props" unique_id=175844070 instance=ExtResource("2_i2aat")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048713684, 1.0418389, -0.6)
+[node name="Dog1" type="RigidBody3D" parent="Props" unique_id=175844070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048713684, 0.06644887, 0.44779634)
+freeze = true
+script = ExtResource("2_kfebt")
+category = 1
 
-[node name="Cow1" parent="Props" unique_id=151611866 instance=ExtResource("3_uvc87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Dog1" unique_id=1065910707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18974882, -0.009444475)
+shape = SubResource("BoxShape3D_qstn0")
 
-[node name="cat1" parent="Props" unique_id=1354517604 instance=ExtResource("4_qdh5e")]
+[node name="dog_silhouette" parent="Props/Dog1" unique_id=338902515 instance=ExtResource("3_r72dd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022422075, 0)
 
-[node name="Bike1" parent="Props" unique_id=968209917 instance=ExtResource("5_1ey3t")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Dog1" unique_id=578337144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23884475, 0)
+stream = ExtResource("4_r72dd")
 
-[node name="Car1" parent="Props" unique_id=1244749884 instance=ExtResource("6_t0hvh")]
+[node name="Cow1" type="RigidBody3D" parent="Props" unique_id=151611866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21516871, 1.0482547, -0.90810955)
+freeze = true
+script = ExtResource("2_kfebt")
+category = 1
 
-[node name="train1" parent="Props" unique_id=1216153920 instance=ExtResource("7_kfebt")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Cow1" unique_id=378353757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5770253, -0.6881013, 1.6194998)
+shape = SubResource("BoxShape3D_iu1m7")
 
-[node name="Ball" type="RigidBody3D" parent="Props" unique_id=1132815180]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, -0.6)
+[node name="cow_silhouette" parent="Props/Cow1" unique_id=1308699153 instance=ExtResource("4_ijn0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5552006, -0.8629715, 1.5945134)
 
-[node name="Mesh" type="MeshInstance3D" parent="Props/Ball" unique_id=1129723319]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12304139)
-mesh = SubResource("SphereMesh_m802k")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Cow1" unique_id=754308545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59457886, -0.68016404, 1.5879638)
+stream = ExtResource("6_gi8m4")
 
-[node name="Collision" type="CollisionShape3D" parent="Props/Ball" unique_id=2144728532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.121456295)
-shape = SubResource("SphereShape3D_i2aat")
+[node name="cat1" type="RigidBody3D" parent="Props" unique_id=1354517604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5261071, 0, 0.63148665)
+freeze = true
+script = ExtResource("2_kfebt")
+category = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/cat1" unique_id=708888320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052490234, 0.24537688, -0.020385742)
+shape = SubResource("BoxShape3D_jix2m")
+
+[node name="cat_silhouette" parent="Props/cat1" unique_id=2083674268 instance=ExtResource("5_jmes4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.053009868, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/cat1" unique_id=90043375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2265541, 0)
+stream = ExtResource("8_cwffn")
+
+[node name="Bike1" type="RigidBody3D" parent="Props" unique_id=968209917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041652977, 1.5000218)
+freeze = true
+script = ExtResource("2_kfebt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Bike1" unique_id=1989426383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056762695, 0.19629434, -0.03768921)
+shape = SubResource("BoxShape3D_3g50r")
+
+[node name="bike_silhouette" parent="Props/Bike1" unique_id=1174241494 instance=ExtResource("6_tyxjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.040225744, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Bike1" unique_id=573324994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19069016, 0)
+stream = ExtResource("10_e6lid")
+
+[node name="Car1" type="RigidBody3D" parent="Props" unique_id=1244749884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.856338, 0.031240433, 1.4085796)
+freeze = true
+script = ExtResource("2_kfebt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Car1" unique_id=108156838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049346924, 0.17634815, -0.012250185)
+shape = SubResource("BoxShape3D_cwffn")
+
+[node name="car_silhouette" parent="Props/Car1" unique_id=1602164738 instance=ExtResource("7_07lms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027006686, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/Car1" unique_id=1366605033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13455443, -0.094496965)
+stream = ExtResource("12_3g50r")
+
+[node name="train1" type="RigidBody3D" parent="Props" unique_id=1216153920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57048714, 0.062420845, 1.4511852)
+freeze = true
+script = ExtResource("2_kfebt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/train1" unique_id=1548084197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08795166, 0.19318828, -0.03503418)
+shape = SubResource("BoxShape3D_e6lid")
+
+[node name="train_silhouette" parent="Props/train1" unique_id=1039606987 instance=ExtResource("8_gi8m4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046089113, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/train1" unique_id=1177349808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16986972, 0)
+stream = ExtResource("14_iu1m7")
 
 [node name="Boxes" type="Node3D" parent="." unique_id=2086867238]
 
-[node name="low_poly_room" parent="." unique_id=654371266 instance=ExtResource("8_07lms")]
+[node name="BoxBase1" parent="Boxes" unique_id=212470345 instance=ExtResource("16_e6lid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6160186, 0.5111182, -0.653762)
 
-[node name="cow_silhouette" parent="." unique_id=867988785 instance=ExtResource("9_gi8m4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0216296, 0.0019999985, 0.49225605)
+[node name="BoxBase2" parent="Boxes" unique_id=788546619 instance=ExtResource("16_e6lid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80355644, 0.4607575, -0.68544835)
 
-[node name="dog_silhouette" parent="." unique_id=782724783 instance=ExtResource("10_cwffn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56380975, 0.004999999, 0.6201384)
-
-[node name="cat_silhouette" parent="." unique_id=1765738808 instance=ExtResource("11_e6lid")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07923114, 0.004999999, 0.70844316)
-
-[node name="bike_silhouette" parent="." unique_id=1998720071 instance=ExtResource("12_3g50r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93702006, 0.002000004, 1.1394974)
-
-[node name="train_silhouette" parent="." unique_id=448842792 instance=ExtResource("13_iu1m7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6300703, 0, 1.2235241)
-
-[node name="car_silhouette" parent="." unique_id=524595332 instance=ExtResource("14_cywot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19940773, -5.9604645e-08, 1.1186781)
-
-[editable path="Props/Dog1"]
-[editable path="Props/Cow1"]
-[editable path="Props/cat1"]
-[editable path="Props/Bike1"]
-[editable path="Props/Car1"]
-[editable path="Props/train1"]
+[node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_cwffn")]

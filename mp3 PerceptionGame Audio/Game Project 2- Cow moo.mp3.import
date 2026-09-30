@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsy5ik8cy31s0"
+path="res://.godot/imported/Game Project 2- Cow moo.mp3-4ca098b7b1e78d2f3bfc6f1223fcda3f.mp3str"
+
+[deps]
+
+source_file="res://mp3 PerceptionGame Audio/Game Project 2- Cow moo.mp3"
+dest_files=["res://.godot/imported/Game Project 2- Cow moo.mp3-4ca098b7b1e78d2f3bfc6f1223fcda3f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

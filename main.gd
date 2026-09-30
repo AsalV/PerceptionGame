@@ -14,6 +14,7 @@ func _ready() -> void:
 
 	# First, we get the current xr_interface. This is defined in the settings, and if undefined, you likely
 	# have not enalbed XR in settings.
+	LevelManager.load_level("res://scenes/levels/level_01.tscn")
 	xr_interface = XRServer.find_interface("OpenXR") as OpenXRInterface
 	if xr_interface == null:
 		push_error("Main|FATAL: OpenXR interface not found. Check Project Settings -> XR")

@@ -1,19 +1,14 @@
 [gd_scene format=3 uid="uid://dw1tqwnwhrd35"]
 
 [ext_resource type="PackedScene" uid="uid://cctrl2nstm42m" path="res://scenes/props/prop_base.tscn" id="1_mtmyj"]
+[ext_resource type="PackedScene" uid="uid://bat2o0fyjk2d6" path="res://assets/models/dogs/dog_silhouette.glb" id="2_fke6u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qstn0"]
 size = Vector3(0.24902344, 0.30993652, 0.26379395)
 
-[sub_resource type="BoxMesh" id="BoxMesh_qyw0a"]
-size = Vector3(0.27929688, 0.2607422, 0.29284668)
-
 [node name="Dog1" unique_id=175844070 instance=ExtResource("1_mtmyj")]
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=1065910707]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3469146, 0.3735662, 0.33327514)
 shape = SubResource("BoxShape3D_qstn0")
 
-[node name="MeshInstance3D" parent="." index="1" unique_id=1172310068]
-transform = Transform3D(0.99987304, 0.013558078, -0.008370664, -0.013495847, 0.9998812, 0.0074467696, 0.008470632, -0.0073328568, 0.99993724, -0.35529435, 0.37444827, 0.3478138)
-mesh = SubResource("BoxMesh_qyw0a")
+[node name="dog_silhouette" parent="." index="1" unique_id=338902515 instance=ExtResource("2_fke6u")]

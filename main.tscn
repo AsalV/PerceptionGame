@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://jfdo7emflrdm" path="res://scripts/B_toggle_passthrough.gd" id="3_vivmo"]
 [ext_resource type="Texture2D" uid="uid://c038dxexu2lhv" path="res://assets/models/controllers/quest_touch_plus_right_crystalControllers_right_BaseColor.png" id="4_5vw27"]
 [ext_resource type="Script" uid="uid://bkeashwobe3gi" path="res://scripts/xr_passthrough.gd" id="6_pass"]
-[ext_resource type="PackedScene" uid="uid://cykjx7uveeoya" path="res://assets/models/low_poly_room.glb" id="11_efxa6"]
 [ext_resource type="Script" uid="uid://u4v467pv0cty" path="res://scripts/xr_grab.gd" id="11_grab"]
 [ext_resource type="Script" uid="uid://cabtbicn2evsq" path="res://scripts/xr_move.gd" id="12_move"]
 [ext_resource type="Script" uid="uid://bt5krry1meoum" path="res://scripts/xr_grab_hands.gd" id="15_hgrab"]
@@ -468,7 +467,8 @@ _bundled = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b1s13"]
-height = 1.8681641
+radius = 0.234375
+height = 1.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cjouy"]
 
@@ -483,8 +483,10 @@ reflected_light_source = 2
 
 [node name="Main" type="Node3D" unique_id=500145794]
 script = ExtResource("1_ig7tw")
+target_refresh_rate = null
 
 [node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=232845730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05278468, 1.0193794, 1.3138022)
 
 [node name="XROrigin3D" type="XROrigin3D" parent="PlayerBody" unique_id=1033207768]
 
@@ -549,7 +551,7 @@ move_controller = NodePath("../XRControllerLeft")
 turn_controller = NodePath("../XRControllerRight")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody" unique_id=1518647753]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06591797, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_b1s13")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=868570715]
@@ -567,8 +569,5 @@ directional_shadow_max_distance = 12.0
 [node name="Passthrough" type="Node" parent="." unique_id=1290157622]
 script = ExtResource("6_pass")
 world_environment = NodePath("../WorldEnvironment")
-hide_in_passthrough = Array[NodePath]([NodePath(""), NodePath(""), NodePath("")])
 
 [node name="LevelContainer" type="Node3D" parent="." unique_id=776137034]
-
-[node name="low_poly_room" parent="." unique_id=654371266 instance=ExtResource("11_efxa6")]

@@ -1,11 +1,16 @@
 extends Node
 
+var current_level: Node
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func load_level(scene_path: String) -> void:
+	if scene_path == "":
+		push_warning("LevelManager: next_level_scene is empty!")
+		return
 
+	var container := get_tree().root.get_node("Main/LevelContainer")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	if current_level:
+		current_level.queue_free()
+
+	current_level = load(scene_path).instantiate()
+	container.add_child(current_level)
