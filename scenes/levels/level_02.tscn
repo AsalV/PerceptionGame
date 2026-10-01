@@ -153,12 +153,12 @@ shape = SubResource("BoxShape3D_v5pqk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16460079, 0)
 stream = ExtResource("14_m2te4")
 
-[node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_q6ljp")]
-
 [node name="Boxes" type="Node3D" parent="." unique_id=833304978]
 
 [node name="BoxBase1" parent="Boxes" unique_id=212470345 instance=ExtResource("17_4dr30")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6477212, 1.0522192, -0.7297162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0251398, 0.48226166, 0.0497517)
 
 [node name="BoxBase2" parent="Boxes" unique_id=1940852346 instance=ExtResource("17_4dr30")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77007914, 0.96119857, -0.81294787)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9735538, 0.4492119, 0.026741147)
+
+[node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_q6ljp")]

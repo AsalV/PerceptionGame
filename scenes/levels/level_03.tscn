@@ -38,7 +38,7 @@ size = Vector3(0.24902344, 0.30993652, 0.26379395)
 size = Vector3(0.29003906, 0.22888184, 0.37878418)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7oqvy"]
-size = Vector3(0.24890137, 0.42352295, 0.33303833)
+size = Vector3(0.24890137, 0.42352295, 0.2021637)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghs8o"]
 size = Vector3(0.16662598, 0.24697876, 0.484375)
@@ -47,7 +47,7 @@ size = Vector3(0.16662598, 0.24697876, 0.484375)
 size = Vector3(0.29989624, 0.34106445, 0.45898438)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kapun"]
-size = Vector3(0.381958, 0.29296875, 0.44934082)
+size = Vector3(0.20974731, 0.29296875, 0.44934082)
 
 [node name="Level03" type="Node3D" unique_id=1623227063]
 script = ExtResource("1_j33in")
@@ -104,7 +104,7 @@ script = ExtResource("2_xunku")
 category = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Cat3" unique_id=394685659]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38368198, 0.2343412, 1.2714889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38368195, 0.2343412, 1.3369262)
 shape = SubResource("BoxShape3D_7oqvy")
 
 [node name="cat" parent="Props/Cat3" unique_id=1447709403 instance=ExtResource("12_7oqvy")]
@@ -149,21 +149,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.013419032)
 script = ExtResource("2_xunku")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/train3" unique_id=1727346407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5583074, 0.19564939, 0.67977214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55206656, 0.19564939, 0.67977214)
 shape = SubResource("BoxShape3D_kapun")
 
 [node name="train" parent="Props/train3" unique_id=1260422819 instance=ExtResource("9_iaubp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5383402, 1.1920929e-07, 0.72159785)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Props/train3" unique_id=1778435267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56738394, 0, 0.6063198)
 stream = ExtResource("14_kapun")
-
-[node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_j33in")]
 
 [node name="Boxes" type="Node3D" parent="." unique_id=2107490454]
 
 [node name="BoxBase1" parent="Boxes" unique_id=212470345 instance=ExtResource("17_7oqvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1416476, 0.6811191, -0.9039941)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0085466, 0.46441042, 0.043177754)
 
 [node name="BoxBase2" parent="Boxes" unique_id=794807327 instance=ExtResource("17_7oqvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6188023, 0.743809, -1.1238525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9765036, 0.4575553, -0.0032667518)
+
+[node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_j33in")]

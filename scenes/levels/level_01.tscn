@@ -168,9 +168,9 @@ stream = ExtResource("14_iu1m7")
 [node name="Boxes" type="Node3D" parent="." unique_id=2086867238]
 
 [node name="BoxBase1" parent="Boxes" unique_id=212470345 instance=ExtResource("16_e6lid")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6160186, 0.5111182, -0.653762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0399833, 0.48087728, 0.03474033)
 
 [node name="BoxBase2" parent="Boxes" unique_id=788546619 instance=ExtResource("16_e6lid")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80355644, 0.4607575, -0.68544835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96442544, 0.4607575, 0.04093629)
 
 [node name="Room" parent="." unique_id=1701270660 instance=ExtResource("16_cwffn")]
